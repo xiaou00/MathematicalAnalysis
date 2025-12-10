@@ -1,0 +1,227 @@
+\documentclass{ctexart}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{silence}
+\usepackage[most]{tcolorbox}
+\WarningFilter{hyperref}{}
+\WarningFilter{latexfont}{}
+\usepackage{tikz-cd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{titling}
+\usepackage{pgfplots}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{ulem}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+\setlength{\droptitle}{-3cm}
+\pgfplotsset{compat=1.18}
+\pagestyle{empty}
+\theoremstyle{definition}
+\renewcommand{\contentsname}{}
+
+%chktex-file 37
+%chktex-file 25
+%chktex-file 18
+%chktex-file 17
+%chktex-file 11
+%chktex-file 9
+%chktex-file 3
+
+\renewcommand\proofname{\indent Pf.}
+\newtheorem{remark}{注.}
+
+\newenvironment{comm}[1][]{
+    \begin{tcolorbox}[
+        enhanced,
+        breakable,
+        colframe=black,
+        coltitle=black,
+        colback=white,
+        colbacktitle=white,
+        boxrule=1pt,
+        titlerule=-1pt,
+        title={\bf #1},
+    ]
+
+}{
+    \end{tcolorbox}
+}
+
+\newenvironment{cirno}[1][]{
+    \begin{tcolorbox}[
+        enhanced,
+        breakable,
+        colframe=cyan,
+        coltitle=cyan,
+        colback=white,
+        colbacktitle=white,
+        boxrule=1pt,
+        titlerule=-1pt,
+        title={\bf #1},
+        overlay unbroken and last={
+            \node[anchor=north east, xshift=0, yshift=0] at (frame.north east) {
+                \includegraphics[width=1.2cm]{resources/琪露诺.png}
+            };
+        },
+    ]
+
+}{
+    \end{tcolorbox}
+}
+
+\newenvironment{reimu}[1][]{
+    \begin{tcolorbox}[
+        enhanced,
+        breakable,
+        colframe=red,
+        coltitle=red,
+        colback=white,
+        colbacktitle=white,
+        boxrule=1pt,
+        titlerule=-1pt,
+        title={\bf #1},
+        overlay unbroken and last={
+            \node[anchor=north east, xshift=0, yshift=0] at (frame.north east) {
+                \includegraphics[width=1.2cm]{resources/博丽灵梦.png}
+            };
+        },
+    ]
+
+}{
+    \end{tcolorbox}
+}
+
+\newenvironment{marisa}[1][]{
+    \begin{tcolorbox}[
+        enhanced,
+        breakable,
+        colframe=white,
+        borderline={0.5mm}{0mm}{yellow!50!orange,dashed},
+        coltitle=yellow!50!orange,
+        colback=white,
+        colbacktitle=white,
+        boxrule=1pt,
+        titlerule=-1pt,
+        title={\bf #1},
+        overlay unbroken and last={
+            \node[anchor=north east, xshift=0, yshift=0] at (frame.north east) {
+                \includegraphics[width=1.2cm]{resources/雾雨魔理沙.png}
+            };
+        },
+    ]
+
+}{
+    \end{tcolorbox}
+}
+
+\newcounter{theorem}[section]%=====定理=====
+\renewcommand{\thetheorem}{{定理 }\thesection.\arabic{theorem}}
+\newenvironment{theorem}[1][]{
+    \refstepcounter{theorem}
+    \begin{cirno}[\bf \thetheorem. #1]
+    
+}{
+    \end{cirno}
+}
+%=====引理=====
+\newcommand{\thelemma}{{引理 }\thesection.\arabic{theorem}}
+\newenvironment{lemma}[1][]{
+    \refstepcounter{theorem}
+    \begin{cirno}[\bf \thelemma. #1]
+    
+}{
+    \end{cirno}
+}
+%=====推论=====
+\newcommand{\thecorollary}{{推论 }\thesection.\arabic{theorem}}
+\newenvironment{corollary}[1][]{
+    \refstepcounter{theorem}
+    \begin{cirno}[\bf \thecorollary. #1]
+    
+}{
+    \end{cirno}
+}
+%=====命题=====
+\newcommand{\theproposition}{{命题 }\thesection.\arabic{theorem}}
+\newenvironment{proposition}[1][]{
+    \refstepcounter{theorem}
+    \begin{cirno}[\bf \theproposition. #1]
+    
+}{
+    \end{cirno}
+}
+
+\newcounter{definition}[section]%=====定义=====
+\renewcommand{\thedefinition}{{定义 }\thesection.\arabic{definition}}
+\newenvironment{definition}[1][]{
+    \refstepcounter{definition}
+    \begin{reimu}[\bf \thedefinition. #1]
+    
+}{
+    \end{reimu}
+}
+\newcounter{example}[section]%=====例题=====
+\renewcommand{\theexample}{{例 }\thesection.\arabic{example}}
+\newenvironment{example}[1][]{
+    \refstepcounter{example}
+    \begin{marisa}[\bf \theexample. #1]
+    
+}{
+    \end{marisa}
+}
+
+\newenvironment{solution}{
+    \begin{proof}[Sol.]}{\end{proof}}
+
+%=====标题=====
+\title{数学分析}
+\author{xiaou0}%在这里添加你的名字
+
+%====数学宏=====
+\renewcommand{\O}{\varnothing}
+\renewcommand{\L}{\mathscr{L}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\set}[1]{\left\{\,#1\,\right\}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\diam}{\operatorname{diam}}
+
+
+\begin{document} %=====文档开始=====
+\maketitle
+\tableofcontents
+
+\newpage
+
+\hspace{1em}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics{resources/cirno_title.jpg}
+\end{figure}
+\begin{center}
+    {\bf 特别鸣谢}
+    
+    琪露诺|幻想乡大学纯粹与应用数学博士
+
+    https://www.pixiv.net/artworks/90486424
+\end{center}
+\hspace{5cm}
+\begin{center}
+    {\bf xiaou0的话}
+
+    Ciallo～ 我是xiaou0, 一名爱好数学的普通高中生.
+
+    该材料仅供交流学习, {\bf 仅供交流学习!} 贩卖兜售的话xiaou0会哭的TAT
+
+    我个人的数学写作风格可能尚为稚嫩. 如果你正在学习数学, 希望这份材料能够帮助到你!
+\end{center}
+\newpage
+
+\section{集合与逻辑}
+
+\end{document}
