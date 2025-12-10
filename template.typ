@@ -1,5 +1,5 @@
-#import "../default-theorems.typ"
-#import "../blackboard-replacement.typ"
+#import "default-theorems.typ"
+#import "blackboard-replacement.typ"
 
 #let pot-math(
   lang: "zh",
