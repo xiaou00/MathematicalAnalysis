@@ -1,7 +1,0 @@
-[package]
-name = "pot-math"
-version = "1.0.0"
-entrypoint = "template.typ"
-authors = ["TheColdPot"]
-license = "MIT"
-description = "Pot Math Template"
