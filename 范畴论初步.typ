@@ -1,9 +1,13 @@
 #import "template/template.typ": *
-#show: pot-math.with()
 #import default-theorems: *
+#import constants: *
+#import environments: *
+#import "@preview/cetz:0.4.2"
+#import "@preview/cetz-venn:0.1.4"
+
 
 == 范畴论初步
-\
+
 #let ob=$"ob" $
 #let hom(cat,x,y)=$"Hom"_#cat (#x,#y)$
 
@@ -20,5 +24,7 @@
   $ (f g)h=f(g h) $
   3. *单位态射*: 对于每个对象$a in ob frak(C)$都存在一个态射$1_a in hom(,a,a)$使得对任意$f in hom(,a,b)$以及$g in hom(,c,a)$都有$f 1_a=f$, $1_a g=g$.
 
-  范畴$frak(C)$中态射的全体记作$"Mor"frak$
+  范畴$frak(C)$中态射的全体记作$"Mor" frak(C)$.
 ]
+
+
