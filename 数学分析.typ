@@ -6,3 +6,4 @@
 我不会写模板
 教我写
 */
+#include "chap-basics.typ"
