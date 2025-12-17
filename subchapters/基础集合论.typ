@@ -1,4 +1,4 @@
-#import "template/template.typ": *
+#import "../template/template.typ": *
 #import default-theorems: *
 #import constants: *
 #import environments: *
